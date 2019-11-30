@@ -30,6 +30,6 @@ class OpenWeather:
             return r
         elif by == 'geographic coordinates':
             r = requests.get(
-                f'{self.path}lat={lat_lon[0]}&lon={lat_lon[1]}&appid=7575e7608cc6fa2587b22b386c5c64c8')
+                f'{self.path}lat={lat_lon[0]}&lon={lat_lon[1]}&appid={self.app_id}')
             assert r.status_code == 200 or 400, f'Got unexpected status code: {r.text}'
             return r
